@@ -50,7 +50,7 @@ public class Midias {
 	public static void excluir(int cod) {
 		if (medias.size() == 0) {
 			System.out.println();
-			System.out.println("Nao tem midias...");
+			System.out.println("Nao tem midias....");
 		} else {
 		for (int i = 0; i < medias.size(); i++) {
 			if (medias.get(i) != null && medias.get(i).cod_titulo == cod) {

@@ -7,7 +7,7 @@ public class Principal {
 
 	public static void main (String[] args) {
 		int num1 = 0;
-			System.out.print("Ola, ");
+			System.out.print("Olaa, ");
 		while (num1 != 6) {
 			System.out.println("Digite: \n 1 para adicionar,\n 2 para buscar, \n 3 para remover, \n 4 para exibir, \n 5 para avaliar, \n 6 para sair");
 			Scanner sc1 = new Scanner(System.in);
@@ -244,7 +244,7 @@ public class Principal {
 			    	    Usuario usu = new Usuario (null, null);
 			    	    usu.Avaliar(codigo, estrelas);
 					}
-				}
+				} 
 
 			if (num1 < 1 || num1 > 6) {
 				System.out.println("numero invalido");

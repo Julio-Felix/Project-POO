@@ -14,7 +14,7 @@ public class Ator extends Pessoa {
 	static void deletar(String nome) {
 		if (atores.size() == 0) {
 			System.out.println();
-			System.out.println("Nao tem atores...");
+			System.out.println("Nao tem atores....");
 		} else {
 			for (int i = 0; i < atores.size(); i++) {
 				if (atores.get(i).getName().equals(nome)) {

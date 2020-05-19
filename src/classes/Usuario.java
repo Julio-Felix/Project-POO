@@ -63,7 +63,7 @@ public class Usuario extends Pessoa implements Operacoes {
 	static void deletar (String email) {
 		if (usuarios.size() == 0) {
 			System.out.println();
-			System.out.println("Nao tem usuarios...");
+			System.out.println("Nao tem usuarios....");
 		} else {
 		for (int i = 0; i < usuarios.size(); i++) {
 			if (usuarios.get(i).getEmail().equals(email)) {
@@ -112,14 +112,12 @@ public class Usuario extends Pessoa implements Operacoes {
 		}
 	}
 	
-	
 
 	@Override
 	public void Favoritar(Midias midia) {
 		this.favs.add(midia);
     	System.out.println("SEU FILME FOI ADICIONADO AOS FAVORITOS");
 
-		
 	}
 
 	
