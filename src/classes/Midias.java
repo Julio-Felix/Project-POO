@@ -26,7 +26,7 @@ public class Midias {
 	public void exibir() {
 
 			System.out.println("Codigo do Filme : " + cod_titulo);
-			System.out.println("Tipo da midia : " + tipo );
+			System.out.println("Avaliação: " + rating );
 			System.out.println("Titulo do Filme : " + titulo);
 			System.out.println("Codigo do Filme : " + genero);
 			System.out.println("Atores da Midia : ");

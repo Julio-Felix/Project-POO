@@ -16,7 +16,7 @@ public class Usuario extends Pessoa implements Operacoes {
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
@@ -43,17 +43,10 @@ public class Usuario extends Pessoa implements Operacoes {
 		this.favs.add(m);
 	}
 
-	void deletar_favs(String titulo) {
-		for (Midias Midias : this.favs) {
-			if (Midias!= null && Midias.getTitulo() == titulo) {
-				this.favs.remove(Midias);
-			}
-		}
-	}
 
 	void listar_favs() {
 		for (Midias Midias : this.favs) {
-	System.out.println("Codigo do Filme : " + Midias.getCod_titulo());
+			System.out.println("Codigo do Filme : " + Midias.getCod_titulo());
 			System.out.println("Tipo da Midias : " + Midias.getTipo() );
 			System.out.println("Titulo do Filme : " + Midias.getTitulo());
 			System.out.println("------------------------------------------------------------" );
@@ -74,17 +67,26 @@ public class Usuario extends Pessoa implements Operacoes {
 		}
 		
 	}
+	
+	
+	
 	public void exibir() {
 		System.out.println("Nome: " + this.nome);
+		System.out.println("Email: " + this.email);
 	}
-	public static String consultar(String email ) {
+	
+	
+	
+	public static Usuario consultar(String email ) {
 		for (int i = 0; i < usuarios.size(); i++) {
 			if (usuarios.get(i).getEmail().equals(email)) {
-				return usuarios.get(i).getEmail();
+				return usuarios.get(i);
 			}
 		}
-		return "Nao encontrado";
+		return null;
 	}
+	
+	
 
 	static void listar() {
 		ListIterator<Usuario> vs = usuarios.listIterator();
@@ -103,6 +105,9 @@ public class Usuario extends Pessoa implements Operacoes {
 		}
 
 	}
+	
+	
+	
 
 	@Override
 	public void Avaliar(int codigo, double estrelas) {

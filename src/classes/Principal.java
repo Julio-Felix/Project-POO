@@ -8,8 +8,8 @@ public class Principal {
 	public static void main (String[] args) {
 		int num1 = 0;
 			System.out.print("Ola, ");
-		while (num1 != 6) {
-			System.out.println("Digite: \n 1 para adicionar,\n 2 para buscar, \n 3 para remover, \n 4 para exibir, \n 5 para avaliar, \n 6 para sair");
+		while (num1 != 7) {
+			System.out.println("Digite: \n 1 para adicionar,\n 2 para buscar, \n 3 para remover, \n 4 para exibir, \n 5 para Avaliar, \n 6 para Favoritar, \n 7 para sair");
 			Scanner sc1 = new Scanner(System.in);
 			num1 = sc1.nextInt();
 		
@@ -38,14 +38,12 @@ public class Principal {
 						num2 = sc1.nextInt();
 					}
 					if (num2 == 2) {
-						System.out.println();
+						sc1.nextLine();
 						System.out.println("Digite o nome");
-						sc1.nextLine();
 						String name = sc1.nextLine();
-						System.out.println();
+						System.out.print("------------");
 						System.out.println("Digite o email");
-						sc1.nextLine();
-						String email = sc1.nextLine();
+						String email = sc1.next();
 						
 						Usuario user = new Usuario(name,email);
 						Usuario.setUsuarios(user);
@@ -248,7 +246,7 @@ public class Principal {
 				}
 			}
 			if (num1 == 5) {
-				System.out.println("Digite 1 para AVALIAR, 2 para EXIBIR os filmes e suas avaliações, 3 para SAIR");
+				System.out.println("Digite 1 para AVALIAR, 3 para SAIR");
 				int num4 = sc1.nextInt();
 				while (num4 != 3) {
 					if (num4 == 1) {
@@ -256,15 +254,62 @@ public class Principal {
 						int codigo = sc1.nextInt();
 			    	    System.out.println("QUANTAS ESTRELAS DESEJA ADICIONAR A ESSE FILME?");
 			    	    double estrelas = sc1.nextDouble();
-			    	    Usuario usu = new Usuario (null, null);
-			    	    usu.Avaliar(codigo, estrelas);
+			    	    System.out.println("Qual Usuário está avaliando essa Midia?");
+			    	    System.out.print("Email:");
+			    	    String email = sc1.next();
+			    	    Usuario user = Usuario.consultar(email);
+			    	    if(user != null) {
+			    	    	user.Avaliar(codigo, estrelas);
+			    	    }else {
+			    	    	System.out.println("Desculpe Usuário não Existe");
+			    	    }
+			    	    System.out.println("Digite 1 para AVALIAR, 2 para EXIBIR os filmes e suas avaliações, 3 para SAIR");
+						num4 = sc1.nextInt();
 					}
 				} 
 
-			if (num1 < 1 || num1 > 6) {
+		}
+			if (num1 == 6) {
+				System.out.println("Digite 1 para Favoritar, 2 para Listar Favoritos, 3 para SAIR");
+				int num4 = sc1.nextInt();
+				while (num4 != 3) {
+					if (num4 == 1) {
+						System.out.println("Qual Usuário está Favoritando essa Midia?");
+			    	    System.out.print("Email:");
+			    	    String email = sc1.next();
+			    	    Usuario user = Usuario.consultar(email);
+			    	    if(user != null) {
+			    	    	System.out.print("DIGITE O CODIGO FILME A SER FAVORITADO:");
+							int codigo = sc1.nextInt();
+							Midias med = Midias.consultar(codigo);
+							user.Favoritar(med);
+			    	    }else {
+			    	    	System.out.println("Desculpe Usuário não Existe");
+			    	    }
+			    	    System.out.println("Digite 1 para Favoritar, 2 para Listar Favoritos, 3 para SAIR");
+						num4 = sc1.nextInt();
+					}
+					if (num4 == 2) {
+						System.out.println("Qual Usuário deseja listar os favoritos?");
+			    	    System.out.print("Email:");
+			    	    String email = sc1.next();
+			    	    Usuario user = Usuario.consultar(email);
+			    	    if(user != null) {
+							user.listar_favs();
+			    	    }else {
+			    	    	System.out.println("Desculpe Usuário não Existe");
+			    	    }
+			    	    System.out.println("Digite 1 para Favoritar, 2 para Listar Favoritos, 3 para SAIR");
+						num4 = sc1.nextInt();
+					}
+					
+				} 
+
+			
+		}
+			if (num1 < 1 || num1 > 7) {
 				System.out.println("numero invalido");
 			}
-		}
 	}
 
 	}
