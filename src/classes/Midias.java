@@ -29,7 +29,11 @@ public class Midias {
 			System.out.println("Tipo da midia : " + tipo );
 			System.out.println("Titulo do Filme : " + titulo);
 			System.out.println("Codigo do Filme : " + genero);
-
+			System.out.println("Atores da Midia : ");
+			for(Ator ator : this.ator) {
+				ator.exibir();
+			}
+			System.out.println("----Atores");
 		
 	}
 	
@@ -160,10 +164,14 @@ public class Midias {
 	public ArrayList<Midias> getMidia() {
 		return medias;
 	}
-
+	public void addAtor(Ator ator) {
+		this.ator.add(ator);
+	}
 	public static void setMidia(Midias midias) {
 		medias.add(midias);
-	}	
+	}
+	
+	
 	
 	
 	

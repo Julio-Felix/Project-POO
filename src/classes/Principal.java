@@ -26,7 +26,9 @@ public class Principal {
 						System.out.println("Digite o nome do ator");
 						sc1.nextLine();
 						String name = sc1.nextLine();
-						Ator ator = new Ator(name);
+						System.out.println("Digite o Codigo em numero Inteiro");
+						int cod = sc1.nextInt();
+						Ator ator = new Ator(name,cod);
 						Ator.setAtores(ator);
 						System.out.println("\nOkay");
 						System.out.println();
@@ -68,8 +70,19 @@ public class Principal {
 						midia1.setCod_titulo(codigo);
 						
 						Midias.setMidia(midia1);
-						System.out.println("\nOkay");
-
+						System.out.println("\nOkay, Deseja Adicionar Atores? 1 para sim 2 para não");
+						int choose = sc1.nextInt();
+						if(choose == 1) {
+							while(choose == 1) {
+								System.out.println();
+								System.out.println("Digite o Codigo em numero Inteiro");
+								int cod = sc1.nextInt();
+								Ator ator = Ator.consultar(cod);
+								midia1.addAtor(ator);
+								System.out.println("Deseja Continuar Adicionar Atores? 1 para sim 2 para não");
+								choose = sc1.nextInt();
+							}
+						}
 						System.out.println();
 						System.out.println("...Adicionar...");
 						System.out
@@ -97,10 +110,12 @@ public class Principal {
 				while (num3 != 4) {
 					if (num3 == 1) {
 						System.out.println();
-						System.out.println("Digite o nome do ator");
-						sc1.nextLine();
-						String name = sc1.nextLine();
-						System.out.println(Ator.consultar(name));
+						System.out.println("Digite o Codigo do ator");
+						int cod = sc1.nextInt();
+						Ator ator = Ator.consultar(cod);
+						ator.exibir();
+//						System.out.println(ator.getName());
+//						System.out.println(ator.getCod_ator());
 						System.out.println();
 						System.out.println("...Buscar...");
 						System.out.println("Digite: \n 1 para ATOR, \n 2 para USUARIO, \n 3 para MIDIAS, \n 4 para SAIR");
