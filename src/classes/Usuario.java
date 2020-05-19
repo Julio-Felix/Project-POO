@@ -1,9 +1,7 @@
 package classes;
 
-
 import java.util.ArrayList;
 import java.util.ListIterator;
-import java.util.Scanner;
 
 public class Usuario extends Pessoa implements Operacoes {
 
@@ -63,10 +61,16 @@ public class Usuario extends Pessoa implements Operacoes {
 	}
 
 	static void deletar (String email) {
+		if (usuarios.size() == 0) {
+			System.out.println();
+			System.out.println("Nao tem usuarios....");
+		} else {
 		for (int i = 0; i < usuarios.size(); i++) {
 			if (usuarios.get(i).getEmail().equals(email)) {
 				usuarios.remove(i);
+				System.out.println("Excluido Usuario: "+email);
 			}
+		}
 		}
 		
 	}
@@ -76,16 +80,16 @@ public class Usuario extends Pessoa implements Operacoes {
 	public static String consultar(String email ) {
 		for (int i = 0; i < usuarios.size(); i++) {
 			if (usuarios.get(i).getEmail().equals(email)) {
-
 				return usuarios.get(i).getEmail();
 			}
 		}
-		return null;
+		return "Nao encontrado";
 	}
 
 	static void listar() {
 		ListIterator<Usuario> vs = usuarios.listIterator();
 
+		if (vs.hasNext()) {
 		while (vs.hasNext()) {
 
 			Usuario m = vs.next();
@@ -93,7 +97,10 @@ public class Usuario extends Pessoa implements Operacoes {
 			m.exibir();
 
 		}
-		System.out.println ("Não tem usuarios");
+		}
+		else {
+		System.out.println("Não tem mais usuarios");
+		}
 
 	}
 
@@ -104,14 +111,13 @@ public class Usuario extends Pessoa implements Operacoes {
 			med.setRating(estrelas);
 		}
 	}
+	
 
 	@Override
 	public void Favoritar(Midias midia) {
-		this.favs.add(midia);// TODO Auto-generated method stub
-    	System.out.println("SEU FILME FOI ADICIONADO AOS FAVORITOS");// TODO Auto-generated method stub
-		
+		this.favs.add(midia);
+    	System.out.println("SEU FILME FOI ADICIONADO AOS FAVORITOS");
 
-		
 	}
 
 	
