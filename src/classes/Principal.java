@@ -20,7 +20,8 @@ public class Principal {
 				while (num2 != 4) {
 					if (num2 == 1) {
 						System.out.println("Digite o nome do ator");
-						String name = sc1.next();
+						sc1.nextLine();
+						String name = sc1.nextLine();
 						Ator ator = new Ator(name);
 						Ator.setAtores(ator);
 						System.out.println(
@@ -29,9 +30,11 @@ public class Principal {
 					}
 					if (num2 == 2) {
 						System.out.println("Digite o nome");
-						String name = sc1.next();
+						sc1.nextLine();
+						String name = sc1.nextLine();
 						System.out.println("Digite o email");
-						String email = sc1.next();
+						sc1.nextLine();
+						String email = sc1.nextLine();
 						
 						Usuario user = new Usuario(name,email);
 						Usuario.setUsuarios(user);
@@ -42,7 +45,8 @@ public class Principal {
 					}
 					if (num2 == 3) {
 						System.out.println("Digite o titulo");
-						String titulo = sc1.next();
+						sc1.nextLine();
+						String titulo = sc1.nextLine();
 						Midias midia1 = new Midias ();
 						midia1.setTitulo(titulo);
 						System.out.println("Digite o codigo");
@@ -71,14 +75,16 @@ public class Principal {
 				while (num3 != 4) {
 					if (num3 == 1) {
 						System.out.println("Digite o nome do ator");
-						String name = sc1.next();
+						sc1.nextLine();
+						String name = sc1.nextLine();
 						System.out.println(Ator.consultar(name));
 						System.out.println("digite 1 para buscar ator, 2 para usuario, 3 para midias, 4 para sair");
 						num3 = sc1.nextInt();
 					}
 					if (num3 == 2) {
 						System.out.println("Digite Email do usuario");
-						String email = sc1.next();
+						sc1.nextLine();
+						String email = sc1.nextLine();
 						System.out.println(Usuario.consultar(email));
 						System.out.println("digite 1 para buscar ator, 2 para usuario, 3 para midias, 4 para sair");
 						num3 = sc1.nextInt();
@@ -110,14 +116,16 @@ public class Principal {
 				while (num3 != 4) {
 					if (num3 == 1) {
 						System.out.println("Digite o nome do ator");
-						String name = sc1.next();
+						sc1.nextLine();
+						String name = sc1.nextLine();
 						Ator.deletar(name);
 						System.out.println("digite 1 para remover ator, 2 para usuario, 3 para midias, 4 para sair");
 						num3 = sc1.nextInt();
 					}
 					if (num3 == 2) {
 						System.out.println("Digite email do usuario");
-						String email = sc1.next();
+						sc1.nextLine();
+						String email = sc1.nextLine();
 						Usuario.deletar(email);
 						System.out.println("Excluido Usuario: "+email);
 						System.out.println("digite 1 para remover ator, 2 para usuario, 3 para midias, 4 para sair");

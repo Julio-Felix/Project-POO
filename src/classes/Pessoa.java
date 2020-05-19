@@ -5,7 +5,6 @@ public class Pessoa {
 	String nome;
 	
 	Pessoa(String name){
-		System.out.println("testes autor"+name);
 		this.nome=name;
 	}
 
