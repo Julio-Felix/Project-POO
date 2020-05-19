@@ -48,10 +48,16 @@ public class Midias {
 	} */
 
 	public static void excluir(int cod) {
+		if (medias.size() == 0) {
+			System.out.println();
+			System.out.println("Nao tem midias...");
+		} else {
 		for (int i = 0; i < medias.size(); i++) {
 			if (medias.get(i) != null && medias.get(i).cod_titulo == cod) {
 				medias.remove(i);
+				System.out.println("Excluido codigo: "+cod);
 			}
+		}
 		}
 	}
 
@@ -78,6 +84,7 @@ public class Midias {
 	
 	static public void listar() {
 		ListIterator<Midias> vs = medias.listIterator();
+		if (vs.hasNext()) {
 		while (vs.hasNext()) {
 
 			Midias m = vs.next();
@@ -85,8 +92,11 @@ public class Midias {
 			m.exibir();
 
 		}
-		System.out.println ("Não tem midias");
+		}		
 
+		else {
+		System.out.println("Não tem mais usuarios");
+		}
 	}
 	
 	
