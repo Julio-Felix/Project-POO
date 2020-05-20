@@ -45,6 +45,9 @@ public class Usuario extends Pessoa implements Operacoes {
 
 
 	void listar_favs() {
+		if (favs.isEmpty()) {
+			System.out.println("Não há filmes favoritos");
+		}
 		for (Midias Midias : this.favs) {
 			System.out.println("Codigo do Filme : " + Midias.getCod_titulo());
 			System.out.println("Tipo da Midias : " + Midias.getTipo() );
@@ -114,6 +117,9 @@ public class Usuario extends Pessoa implements Operacoes {
 		Midias med = Midias.consultar(codigo);
 		if (med != null){
 			med.setRating(estrelas);
+		}
+		else {
+			System.out.println("Essa midia não existe");
 		}
 	}
 	

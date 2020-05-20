@@ -33,7 +33,6 @@ public class Midias {
 			for(Ator ator : this.ator) {
 				ator.exibir();
 			}
-			System.out.println("----Atores");
 		
 	}
 	

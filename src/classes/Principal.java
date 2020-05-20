@@ -26,11 +26,11 @@ public class Principal {
 						System.out.println("Digite o nome do ator");
 						sc1.nextLine();
 						String name = sc1.nextLine();
-						System.out.println("Digite o Codigo em numero Inteiro");
+						System.out.println("Digite o Codigo do ator em numero Inteiro");
 						int cod = sc1.nextInt();
 						Ator ator = new Ator(name,cod);
 						Ator.setAtores(ator);
-						System.out.println("\nOkay");
+						System.out.println("\nCerto");
 						System.out.println();
 						System.out.println("...Adicionar...");
 						System.out
@@ -41,13 +41,13 @@ public class Principal {
 						sc1.nextLine();
 						System.out.println("Digite o nome");
 						String name = sc1.nextLine();
-						System.out.print("------------");
+						System.out.println();
 						System.out.println("Digite o email");
 						String email = sc1.next();
 						
 						Usuario user = new Usuario(name,email);
 						Usuario.setUsuarios(user);
-						System.out.println("\nOkay");
+						System.out.println("\nCerto");
 						
 						System.out.println();
 						System.out.println("...Adicionar...");
@@ -68,16 +68,16 @@ public class Principal {
 						midia1.setCod_titulo(codigo);
 						
 						Midias.setMidia(midia1);
-						System.out.println("\nOkay, Deseja Adicionar Atores? 1 para sim 2 para não");
+						System.out.println("\nCerto, Deseja Adicionar Atores? Digite 1 para sim e 2 para não");
 						int choose = sc1.nextInt();
 						if(choose == 1) {
 							while(choose == 1) {
 								System.out.println();
-								System.out.println("Digite o Codigo em numero Inteiro");
+								System.out.println("Digite o Codigo do ator em numero Inteiro");
 								int cod = sc1.nextInt();
 								Ator ator = Ator.consultar(cod);
 								midia1.addAtor(ator);
-								System.out.println("Deseja Continuar Adicionar Atores? 1 para sim 2 para não");
+								System.out.println("Deseja Continuar Adicionar Atores? Digite 1 para sim 2 para não");
 								choose = sc1.nextInt();
 							}
 						}
@@ -246,66 +246,73 @@ public class Principal {
 				}
 			}
 			if (num1 == 5) {
-				System.out.println("Digite 1 para AVALIAR, 3 para SAIR");
+				System.out.println();
+				System.out.println("Digite \n 1 para CONTINUAR, \n 2 para SAIR");
 				int num4 = sc1.nextInt();
-				while (num4 != 3) {
+				while (num4 != 2) {
 					if (num4 == 1) {
-						System.out.print("DIGITE O CODIGO FILME A SER PROCURADO:");
+						System.out.println();
+						System.out.print("Digite o codigo do filme a ser avaliado:");
 						int codigo = sc1.nextInt();
-			    	    System.out.println("QUANTAS ESTRELAS DESEJA ADICIONAR A ESSE FILME?");
+						System.out.println();
+			    	    System.out.println("Quantas estrelas deseja adicionar para o filme?");
 			    	    double estrelas = sc1.nextDouble();
-			    	    System.out.println("Qual Usuário está avaliando essa Midia?");
-			    	    System.out.print("Email:");
+						System.out.println();
+			    	    System.out.println("Digite o email do Usuário que está avaliando essa Midia:");
 			    	    String email = sc1.next();
 			    	    Usuario user = Usuario.consultar(email);
 			    	    if(user != null) {
 			    	    	user.Avaliar(codigo, estrelas);
 			    	    }else {
-			    	    	System.out.println("Desculpe Usuário não Existe");
+			    	    	System.out.println();
+			    	    	System.out.println("Usuário não Existe");
 			    	    }
-			    	    System.out.println("Digite 1 para AVALIAR, 2 para EXIBIR os filmes e suas avaliações, 3 para SAIR");
+						System.out.println();
+			    	    System.out.println("Digite \n 1 para AVALIAR OUTRO FILME, \n 2 para SAIR");
 						num4 = sc1.nextInt();
 					}
 				} 
 
 		}
 			if (num1 == 6) {
-				System.out.println("Digite 1 para Favoritar, 2 para Listar Favoritos, 3 para SAIR");
+				System.out.println("Digite \n 1 para FAVORITAR, \n 2 para LISTAR FAVORITOS, \n 3 para SAIR");
 				int num4 = sc1.nextInt();
 				while (num4 != 3) {
 					if (num4 == 1) {
-						System.out.println("Qual Usuário está Favoritando essa Midia?");
-			    	    System.out.print("Email:");
+						System.out.println();
+						System.out.println("Digite o email do usuário que está favoritando essa midia");
 			    	    String email = sc1.next();
 			    	    Usuario user = Usuario.consultar(email);
 			    	    if(user != null) {
-			    	    	System.out.print("DIGITE O CODIGO FILME A SER FAVORITADO:");
+							System.out.println();
+			    	    	System.out.print("Digite o codigo do filme a ser favoritado:");
 							int codigo = sc1.nextInt();
 							Midias med = Midias.consultar(codigo);
 							user.Favoritar(med);
 			    	    }else {
-			    	    	System.out.println("Desculpe Usuário não Existe");
+			    	    	System.out.println();
+			    	    	System.out.println("Usuário não Existe");
 			    	    }
-			    	    System.out.println("Digite 1 para Favoritar, 2 para Listar Favoritos, 3 para SAIR");
+			    	    System.out.println();
+			    	    System.out.println("Digite \n 1 para FAVORITAR, \n 2 para LISTAR FAVORITOS, \n 3 para SAIR");
 						num4 = sc1.nextInt();
 					}
 					if (num4 == 2) {
-						System.out.println("Qual Usuário deseja listar os favoritos?");
-			    	    System.out.print("Email:");
+						System.out.println();
+						System.out.println("Digite o email do Usuário que deseja listar os favoritos:");
 			    	    String email = sc1.next();
 			    	    Usuario user = Usuario.consultar(email);
 			    	    if(user != null) {
 							user.listar_favs();
 			    	    }else {
-			    	    	System.out.println("Desculpe Usuário não Existe");
+			    	    	System.out.println();
+			    	    	System.out.println("Usuário não Existe");
 			    	    }
-			    	    System.out.println("Digite 1 para Favoritar, 2 para Listar Favoritos, 3 para SAIR");
+						System.out.println();
+			    	    System.out.println("Digite \n 1 para FAVORITAR, \n 2 para LISTAR FAVORITOS, \n 3 para SAIR");
 						num4 = sc1.nextInt();
 					}
-					
 				} 
-
-			
 		}
 			if (num1 < 1 || num1 > 7) {
 				System.out.println("numero invalido");
