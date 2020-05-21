@@ -76,6 +76,7 @@ public class Usuario extends Pessoa implements Operacoes {
 	public void exibir() {
 		System.out.println("Nome: " + this.nome);
 		System.out.println("Email: " + this.email);
+		System.out.println("----------------------");
 	}
 	
 	

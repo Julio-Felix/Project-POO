@@ -124,7 +124,7 @@ public class Principal {
 						System.out.println("Digite Email do usuario");
 						sc1.nextLine();
 						String email = sc1.nextLine();
-						System.out.println(Usuario.consultar(email));
+						Usuario.consultar(email).exibir();
 						System.out.println();
 						System.out.println("...Buscar...");
 						System.out.println("Digite: \n 1 para ATOR, \n 2 para USUARIO, \n 3 para MIDIAS, \n 4 para SAIR");

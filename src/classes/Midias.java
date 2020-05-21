@@ -28,7 +28,7 @@ public class Midias {
 			System.out.println("Codigo do Filme : " + cod_titulo);
 			System.out.println("Avaliação: " + rating );
 			System.out.println("Titulo do Filme : " + titulo);
-			System.out.println("Codigo do Filme : " + genero);
+			System.out.println("Genero do Filme : " + genero);
 			System.out.println("Atores da Midia : ");
 			for(Ator ator : this.ator) {
 				ator.exibir();
