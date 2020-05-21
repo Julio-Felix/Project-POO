@@ -136,7 +136,7 @@ public class Principal {
 						int cod = sc1.nextInt();
 						Midias med = Midias.consultar(cod);
 						if(med != null) {
-							med.exibir();
+							med.exibir(true);
 						}else {
 							System.out.println("Não encontrado");
 						}
@@ -229,7 +229,7 @@ public class Principal {
 					if (num3 == 3) {
 						System.out.println();
 						System.out.println("Listando midias");
-						Midias.listar();
+						Midias.listar(true);
 						System.out.println();
 						System.out.println("...Listar...");
 						System.out.println("Digite: \n 1 para ATOR, \n 2 para USUARIO, \n 3 para MIDIAS, \n 4 para SAIR");
@@ -246,7 +246,8 @@ public class Principal {
 				}
 			}
 			if (num1 == 5) {
-				System.out.println();
+				System.out.println("Essas são as midias:");
+				Midias.listar(false);
 				System.out.println("Digite \n 1 para CONTINUAR, \n 2 para SAIR");
 				int num4 = sc1.nextInt();
 				while (num4 != 2) {
@@ -276,7 +277,7 @@ public class Principal {
 		}
 			if (num1 == 6) {
 				System.out.println("Essas são as midias:");
-				Midias.listar2();
+				Midias.listar(false);
 				System.out.println("Digite \n 1 para FAVORITAR, \n 2 para LISTAR FAVORITOS, \n 3 para SAIR");
 				int num4 = sc1.nextInt();
 				while (num4 != 3) {

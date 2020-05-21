@@ -23,25 +23,21 @@ public class Midias {
 	}
 	
 
-	public void exibir() {
+	public void exibir(Boolean completed) {
 
 			System.out.println("Codigo do Filme : " + cod_titulo);
 			System.out.println("Avaliação: " + rating );
 			System.out.println("Titulo do Filme : " + titulo);
-			System.out.println("Genero do Filme : " + genero);
-			System.out.println("Atores da Midia : ");
-			for(Ator ator : this.ator) {
-				ator.exibir();
+			if(completed) {
+				System.out.println("Genero do Filme : " + genero);
+				System.out.println("Atores da Midia : ");
+				for(Ator ator : this.ator) {
+					ator.exibir();
+				}
 			}
+			
 		
 	}
-	
-	public void exibir2() {
-		System.out.println("Codigo do Filme : " + cod_titulo);
-		System.out.println("Titulo do Filme : " + titulo);
-		System.out.println("Avaliação: " + rating );
-	}
-	
 	
 	/* public void inserir(Midias m) {
 		System.out.println("Inserindo uma Midia");
@@ -91,39 +87,20 @@ public class Midias {
 	}
 
 	
-	static public void listar() {
+	static public void listar(Boolean completed) {
 		ListIterator<Midias> vs = medias.listIterator();
 		if (vs.hasNext()) {
 		while (vs.hasNext()) {
 
 			Midias m = vs.next();
+			m.exibir(completed);
 			System.out.println("-------------------");
-			m.exibir();
-
 		}
-		}		
-
-		else {
+		}else {
 		System.out.println("Não tem mais midias");
 		}
 	}
 	
-	static public void listar2() {
-		ListIterator<Midias> vs = medias.listIterator();
-		if (vs.hasNext()) {
-		while (vs.hasNext()) {
-
-			Midias m = vs.next();
-			System.out.println("-------------------");
-			m.exibir2();
-
-		}
-		}		
-
-		else {
-		System.out.println("Não tem mais midias");
-		}
-	}
 	
 	
 	
