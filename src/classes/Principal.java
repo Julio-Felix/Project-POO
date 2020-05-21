@@ -275,6 +275,8 @@ public class Principal {
 
 		}
 			if (num1 == 6) {
+				System.out.println("Essas são as midias:");
+				Midias.listar2();
 				System.out.println("Digite \n 1 para FAVORITAR, \n 2 para LISTAR FAVORITOS, \n 3 para SAIR");
 				int num4 = sc1.nextInt();
 				while (num4 != 3) {

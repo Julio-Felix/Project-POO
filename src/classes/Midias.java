@@ -36,6 +36,12 @@ public class Midias {
 		
 	}
 	
+	public void exibir2() {
+		System.out.println("Codigo do Filme : " + cod_titulo);
+		System.out.println("Titulo do Filme : " + titulo);
+		System.out.println("Avaliação: " + rating );
+	}
+	
 	
 	/* public void inserir(Midias m) {
 		System.out.println("Inserindo uma Midia");
@@ -98,7 +104,24 @@ public class Midias {
 		}		
 
 		else {
-		System.out.println("Não tem mais usuarios");
+		System.out.println("Não tem mais midias");
+		}
+	}
+	
+	static public void listar2() {
+		ListIterator<Midias> vs = medias.listIterator();
+		if (vs.hasNext()) {
+		while (vs.hasNext()) {
+
+			Midias m = vs.next();
+			System.out.println("-------------------");
+			m.exibir2();
+
+		}
+		}		
+
+		else {
+		System.out.println("Não tem mais midias");
 		}
 	}
 	
